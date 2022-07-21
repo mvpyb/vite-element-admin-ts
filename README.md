@@ -46,7 +46,7 @@ Vite Element Admin TS 是一个免费开源的中后台模版(Ts 版本)。使�
 测试账号: 随便填
 测试密码: 随便填
 
-## 效果预览(3.x )
+## 效果预览
 
 <p align="center">
    <img alt="PureAdmin Logo" width="100%" src="http://pic.yupoo.com/454539387/b51791f0/2a9ef9f2.jpg">
@@ -54,13 +54,6 @@ Vite Element Admin TS 是一个免费开源的中后台模版(Ts 版本)。使�
    <img alt="PureAdmin Logo" width="100%" src="http://pic.yupoo.com/454539387/2d44c6f4/6d92062d.jpg">
 </p>
 
-
-## 效果预览(2.x VUEX版本)
-
-<p align="center">
-   <img alt="PureAdmin Logo" width="100%" src="http://pic.yupoo.com/454539387/904e4a82/646a9f0c.png">
-   <img alt="PureAdmin Logo" width="100%" src="http://pic.yupoo.com/454539387/396f79db/a7447eae.png">
-</p>
 
 ## 准备
 
