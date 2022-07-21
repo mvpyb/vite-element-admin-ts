@@ -48,13 +48,6 @@ export default [
     url: '/api/login',
     type: 'get',
     response: () => {
-      // const { username } = config.body
-      // if ( !username ) {
-      //   return {
-      //     code: 60204,
-      //     message: '账号密码错误'
-      //   }
-      // }
       return {
         code: 200,
         message: 'success',

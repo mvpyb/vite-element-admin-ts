@@ -38,15 +38,15 @@ export function composePlugins( isServe : boolean, VITE_LEGACY : boolean ) {
   
     viteMockServe( {
       mockPath: 'mock',
-      watchFiles : true,
-      supportTs : true,
+      // watchFiles : true,
+      // supportTs : true,
       localEnabled : isServe,
-      prodEnabled : isServe && prodMock,
+      prodEnabled : !isServe && prodMock,
       injectCode : `
           import { setupProdMockServer } from './mockProdServer';
           setupProdMockServer();
         `,
-      logger : false
+      logger : true
     } )
   ]
 }

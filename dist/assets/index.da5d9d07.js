@@ -1,0 +1,1 @@
+import{_ as n,c as o,o as s,v as e,e as t}from"./index.a821c646.js";const c={name:"Menu2"},_=e(" nested "),a=t("br",null,null,-1),r=e(" menu2 "),d=t("br",null,null,-1),l=[_,a,r,d];function i(u,p,f,h,m,x){return s(),o("div",null,l)}var v=n(c,[["render",i]]);export{v as default};
