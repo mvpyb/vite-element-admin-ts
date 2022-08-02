@@ -1,8 +1,8 @@
 import { usePermissionStore } from '/@/store'
 import { Directive, DirectiveBinding } from 'vue'
 
-const permission : Directive = {
-  mounted : function( el : HTMLElement, binding : DirectiveBinding ) {
+const permission: Directive = {
+  mounted : function( el: HTMLElement, binding: DirectiveBinding ) {
     const permissionStore = usePermissionStore()
     const { value } = binding
     const roleData = permissionStore.directivePermission

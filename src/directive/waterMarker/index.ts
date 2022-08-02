@@ -1,8 +1,7 @@
-
 import { Directive, DirectiveBinding } from 'vue'
 
-function addWaterMarker( str : string, parentNode : any, font : any, textColor : string ) {
-  const can : HTMLCanvasElement = document.createElement( 'canvas' )
+function addWaterMarker( str: string, parentNode: any, font: any, textColor: string ) {
+  const can: HTMLCanvasElement = document.createElement( 'canvas' )
   parentNode.appendChild( can )
   can.width = 200
   can.height = 150
@@ -18,8 +17,8 @@ function addWaterMarker( str : string, parentNode : any, font : any, textColor :
   parentNode.style.backgroundImage = 'url(' + can.toDataURL( 'image/png' ) + ')'
 }
 
-const waterMarker : Directive = {
-  beforeMount : function( el : HTMLElement, binding : DirectiveBinding ) {
+const waterMarker: Directive = {
+  beforeMount : function( el: HTMLElement, binding: DirectiveBinding ) {
     addWaterMarker( binding.value.text, el, binding.value.font, binding.value.textColor )
   }
 }

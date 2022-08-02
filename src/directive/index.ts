@@ -1,4 +1,3 @@
-
 import clipboard from './clipboard'
 import wave from './wave'
 import longpress from './longpress'
@@ -18,7 +17,7 @@ const directives = {
   wave
 }
 
-const registerDirective = ( app : App ) => {
+const registerDirective = ( app: App ) => {
   Object.keys( directives ).forEach( key => {
     app.directive( key, ( directives as { [key: string]: Directive } )[key] )
   } )

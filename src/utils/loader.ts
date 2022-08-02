@@ -1,7 +1,6 @@
-
 interface ProxyLoader {
-  loadCSS( src: string, isCache : boolean ): void;
-  loadJS( src: string, isCache : boolean ): Promise<any>;
+  loadCSS( src: string, isCache: boolean ): void
+  loadJS( src: string, isCache: boolean ): Promise<any>
 }
 
 class Loader implements ProxyLoader {
@@ -10,8 +9,8 @@ class Loader implements ProxyLoader {
    * @param {*} url
    * @param {*} isCache
    */
-  loadCSS = ( url : string, isCache = false ) : void => {
-    const element:HTMLLinkElement = document.createElement( 'link' )
+  loadCSS = ( url: string, isCache = false ): void => {
+    const element: HTMLLinkElement = document.createElement( 'link' )
     element.setAttribute( 'rel', 'stylesheet' )
     element.setAttribute( 'type', 'text/css' )
     if ( isCache ) {
@@ -27,8 +26,8 @@ class Loader implements ProxyLoader {
    * @param {*} src
    * @param {*} isCache
    */
-  loadJS = async( src : string, isCache = false ) : Promise<any> => {
-    const script : HTMLScriptElement = document.createElement( 'script' )
+  loadJS = async( src: string, isCache = false ): Promise<any> => {
+    const script: HTMLScriptElement = document.createElement( 'script' )
     script.type = 'text/JavaScript'
     if ( isCache ) {
       script.src = src + '?t=' + new Date().getTime()

@@ -8,7 +8,7 @@ const { showSettings, tagsView, fixedHeader, sidebarLogo } = defaultSettings
 
 const useSettingsStore = defineStore( {
   id : 'settings',
-  state : () : setType => {
+  state : (): setType => {
     const localTagsView = localStorageHandle.getItem( 'tagsView' )
     const localFixedHeader = localStorageHandle.getItem( 'fixedHeader' )
     const localSidebarLogo = localStorageHandle.getItem( 'sidebarLogo' )
@@ -22,11 +22,11 @@ const useSettingsStore = defineStore( {
     }
   },
   actions : {
-    CHANGE_SETTING( payload : { key : string, value : any } ) {
+    CHANGE_SETTING( payload: { key: string; value: any } ) {
       const { key, value } = payload
       // eslint-disable-next-line no-prototype-builtins
       if ( this.hasOwnProperty( key ) ) {
-        ( this as any )[key] = value
+        ;( this as any )[key] = value
         localStorageHandle.setItem( key, +value )
       }
     },

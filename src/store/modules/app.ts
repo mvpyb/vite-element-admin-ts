@@ -4,7 +4,7 @@ import { appType } from '../types'
 
 const useAppStore = defineStore( {
   id : 'app',
-  state : () : appType => {
+  state : (): appType => {
     const status = cookies.get( 'sidebarStatus' )
     return {
       sidebar : {
@@ -26,19 +26,19 @@ const useAppStore = defineStore( {
         cookies.set( 'sidebarStatus', 0 )
       }
     },
-    CLOSE_SIDEBAR( withoutAnimation : boolean ) {
+    CLOSE_SIDEBAR( withoutAnimation: boolean ) {
       cookies.set( 'sidebarStatus', 0 )
       this.sidebar.opened = false
       this.sidebar.withoutAnimation = withoutAnimation
     },
-    TOGGLE_DEVICE( device : string ) {
+    TOGGLE_DEVICE( device: string ) {
       this.device = device
     },
-    SET_SIZE( size : string ) {
+    SET_SIZE( size: string ) {
       this.size = size
       cookies.set( 'size', size )
     },
-    SET_LANG( lang : string ) {
+    SET_LANG( lang: string ) {
       this.lang = lang
       cookies.set( 'lang', lang )
     }

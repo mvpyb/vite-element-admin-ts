@@ -1,7 +1,7 @@
 import { validPhone } from './validate'
 
 // 单词首字母转大写
-export function toUpperCaseWord( val?: string ) : string {
+export function toUpperCaseWord( val?: string ): string {
   if ( !val ) return ''
   return val.toLowerCase().replace( /( |^)[a-z]/g, L => L.toUpperCase() )
 }
@@ -17,7 +17,7 @@ export function parseTime( time?: object | string | number | null, cFormat?: str
     return null
   }
   const format = cFormat || '{y}-{m}-{d} {h}:{i}:{s}'
-  let date : Date
+  let date: Date
   if ( typeof time === 'object' ) {
     date = time as Date
   } else {
@@ -63,16 +63,16 @@ export function parseTime( time?: object | string | number | null, cFormat?: str
  * @param {string} option
  * @returns {string}
  */
-export function formatTime( time: string | number, option?:string ) {
+export function formatTime( time: string | number, option?: string ) {
   if ( ( '' + time ).length === 10 ) {
     time = parseInt( time ) * 1000
   } else {
     time = +time
   }
-  const d : any = new Date( time )
-  const now : number = Date.now()
+  const d: any = new Date( time )
+  const now: number = Date.now()
 
-  const diff : number = ( now - d ) / 1000
+  const diff: number = ( now - d ) / 1000
 
   if ( diff < 30 ) {
     return '刚刚'
@@ -91,7 +91,7 @@ export function formatTime( time: string | number, option?:string ) {
   }
 }
 
-export function encryptionPhone( val : string | number ) {
+export function encryptionPhone( val: string | number ) {
   const phone = val + ''
   if ( !validPhone( phone ) ) {
     return ''

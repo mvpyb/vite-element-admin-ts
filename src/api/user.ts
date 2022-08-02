@@ -2,7 +2,7 @@ import http from '/@/utils/request'
 import { requestType } from './index'
 
 // 用户列表
-export function UserList( data?: object ) : requestType {
+export function UserList( data?: object ): requestType {
   return http.request( {
     method : 'post',
     url : '/v1/user/list',
@@ -10,7 +10,7 @@ export function UserList( data?: object ) : requestType {
   } )
 }
 
-export function login( data?: object ) : requestType {
+export function login( data?: object ): requestType {
   return http.request( {
     method : 'get',
     url : '/login',
@@ -18,7 +18,7 @@ export function login( data?: object ) : requestType {
   } )
 }
 
-export function getInfo( data?: object ) : requestType {
+export function getInfo( data?: object ): requestType {
   return http.request( {
     method : 'get',
     url : '/getUserInfo',

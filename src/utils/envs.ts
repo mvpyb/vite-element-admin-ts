@@ -1,11 +1,10 @@
-
 import { GLOBAL_DATA } from '/@/config/constant'
 
 const env = import.meta.env
 const { MODE } = env
 
 // TODO, 此处是按照我司部署习惯写的，可以根据自己需要进行修改， 用途是为了打包一次，fat uat pro 三个环境同时部署
-export function getEnvs() : { envStr : string } {
+export function getEnvs(): { envStr: string } {
   const origin = window.location.origin
   let envStr = ''
   if ( MODE === 'development' ) {
@@ -24,7 +23,7 @@ export function getEnvs() : { envStr : string } {
   }
 }
 
-export function initUrl() : { baseUrlStr : string } {
+export function initUrl(): { baseUrlStr: string } {
   const { envStr } = getEnvs()
   const baseUrlStr = envStr === 'dev' ? env.VITE_APP_API_BASE_URL : GLOBAL_DATA[envStr].baseUrl
   return {

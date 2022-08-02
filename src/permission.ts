@@ -8,7 +8,7 @@ import { RouteRecordRaw } from 'vue-router'
 import { toRouteType } from '/@/router/types'
 
 const whiteList = ['/login']
-router.beforeEach( async( to : toRouteType, from, next ) : Promise<void> => {
+router.beforeEach( async( to: toRouteType, from, next ): Promise<void> => {
   NProgress.start()
   document.title = getPageTitle( to.meta.title )
   const hasToken = cookies.get( TOKEN )
@@ -26,7 +26,7 @@ router.beforeEach( async( to : toRouteType, from, next ) : Promise<void> => {
         try {
           const { roles } = await userStore.GET_USER_INFO()
           const accessRoutes = await permissionStore.SET_ROUTES( roles )
-          accessRoutes.forEach( ( item ) => {
+          accessRoutes.forEach( item => {
             router.addRoute( item as unknown as RouteRecordRaw )
           } )
           next( { ...to, replace : true } )

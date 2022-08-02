@@ -1,20 +1,19 @@
-
 interface callbackFn {
-  ( ...params:any[] ): any
+  ( ...params: any[] ): any
 }
 
-let callbacks : Array<callbackFn> = []
+let callbacks: Array<callbackFn> = []
 
 function loadedTinymce() {
   return window.tinymce
 }
 
-const dynamicLoadScript = ( src : string, callback : callbackFn ) => {
-  const existingScript : HTMLElement | null = document.getElementById( src )
-  const cb : callbackFn = callback || function() {}
+const dynamicLoadScript = ( src: string, callback: callbackFn ) => {
+  const existingScript: HTMLElement | null = document.getElementById( src )
+  const cb: callbackFn = callback || function() {}
 
   if ( !existingScript ) {
-    const script : HTMLScriptElement = document.createElement( 'script' )
+    const script: HTMLScriptElement = document.createElement( 'script' )
     script.src = src // src url for the third-party library being loaded.
     script.id = src
     document.body.appendChild( script )
@@ -30,7 +29,7 @@ const dynamicLoadScript = ( src : string, callback : callbackFn ) => {
     }
   }
 
-  function stdOnEnd( script : HTMLScriptElement ) {
+  function stdOnEnd( script: HTMLScriptElement ) {
     script.onload = function() {
       // this.onload = null here is necessary
       // because even IE9 works not like others

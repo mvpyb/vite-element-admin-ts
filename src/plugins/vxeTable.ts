@@ -151,7 +151,7 @@ VXETable.setup( {
   }
 } )
 
-export function useTable( app : App ) {
+export function useTable( app: App ) {
   app
     .use( Header )
     .use( Footer )

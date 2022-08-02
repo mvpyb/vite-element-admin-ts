@@ -1,12 +1,11 @@
-
 import { Directive, DirectiveBinding } from 'vue'
 
 interface ElType extends Element {
-  __handle__: () => any;
+  __handle__: () => any
 }
 
-const Dobounce : Directive = {
-  created : function( el : ElType, binding : DirectiveBinding ) {
+const Dobounce: Directive = {
+  created : function( el: ElType, binding: DirectiveBinding ) {
     let timer: NodeJS.Timeout | null = null
     el.__handle__ = function() {
       if ( timer ) {
@@ -21,7 +20,6 @@ const Dobounce : Directive = {
   beforeUnmount( el: ElType ) {
     el.removeEventListener( 'click', el.__handle__ )
   }
-
 }
 
 export default Dobounce

@@ -8,7 +8,7 @@ import { userType } from '../types'
 
 const useUserStore = defineStore( {
   id : 'users',
-  state : () :userType => {
+  state : (): userType => {
     return {
       token : cookies.get( TOKEN ) || '',
       uid : '9527',

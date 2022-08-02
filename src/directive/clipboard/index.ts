@@ -1,18 +1,17 @@
-
 import Clipboard from 'clipboard'
 import { Directive, DirectiveBinding } from 'vue'
 interface ElType extends HTMLElement {
-  _v_clipboard_success?: Function | null;
-  _v_clipboard_error?: Function | null;
-  _v_clipboard?: any;
+  _v_clipboard_success?: Function | null
+  _v_clipboard_error?: Function | null
+  _v_clipboard?: any
 }
 
 if ( !Clipboard ) {
   throw new Error( '你须先运行 npm install `clipboard` --save ' )
 }
 
-const clipboard : Directive = {
-  beforeMount( el : ElType, binding : DirectiveBinding ) {
+const clipboard: Directive = {
+  beforeMount( el: ElType, binding: DirectiveBinding ) {
     if ( binding.arg === 'success' ) {
       el._v_clipboard_success = binding.value
     } else if ( binding.arg === 'error' ) {
@@ -37,7 +36,7 @@ const clipboard : Directive = {
       el._v_clipboard = clipboardInstance
     }
   },
-  beforeUpdate( el : ElType, binding : DirectiveBinding ) {
+  beforeUpdate( el: ElType, binding: DirectiveBinding ) {
     if ( binding.arg === 'success' ) {
       el._v_clipboard_success = binding.value
     } else if ( binding.arg === 'error' ) {
@@ -51,7 +50,7 @@ const clipboard : Directive = {
       }
     }
   },
-  unmounted( el : ElType, binding : DirectiveBinding ) {
+  unmounted( el: ElType, binding: DirectiveBinding ) {
     if ( binding.arg === 'success' ) {
       delete el._v_clipboard_success
     } else if ( binding.arg === 'error' ) {

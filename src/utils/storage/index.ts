@@ -1,19 +1,18 @@
-
 interface ProxyStorage {
-  getItem( key: string ): any;
-  setItem( Key: string, value: string ): void;
-  removeItem( key: string ): void;
-  clear(): void;
+  getItem( key: string ): any
+  setItem( Key: string, value: string ): void
+  removeItem( key: string ): void
+  clear(): void
 }
 
 class StorageProxy implements ProxyStorage {
   protected storage: ProxyStorage
 
-  constructor( storageModel : ProxyStorage ) {
+  constructor( storageModel: ProxyStorage ) {
     this.storage = storageModel
   }
 
-  setItem( key : string, value : any ) {
+  setItem( key: string, value: any ) {
     const storage = this.storage
     if ( key ) {
       const data = JSON.stringify( value )
@@ -54,7 +53,7 @@ class StorageProxy implements ProxyStorage {
 
 class LocalStorageProxy extends StorageProxy implements ProxyStorage {
   // eslint-disable-next-line no-useless-constructor
-  constructor( localStorage : ProxyStorage ) {
+  constructor( localStorage: ProxyStorage ) {
     super( localStorage )
   }
 }

@@ -1,4 +1,3 @@
-
 // see more : https://vue-i18n.intlify.dev/introduction.html
 import type { App } from 'vue'
 import { type I18n, createI18n } from 'vue-i18n'
@@ -13,6 +12,6 @@ const localeData = {
 
 export const i18n = createI18n( localeData ) as I18n
 
-export function setupI18n( app : App ) {
+export function setupI18n( app: App ) {
   app.use( i18n )
 }

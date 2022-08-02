@@ -1,7 +1,7 @@
 import http from '/@/utils/request'
 import { requestType } from './index'
 
-export function getArticle( data?: object ) : requestType {
+export function getArticle( data?: object ): requestType {
   return http.request( {
     method : 'get',
     url : '/article/list',
@@ -9,7 +9,7 @@ export function getArticle( data?: object ) : requestType {
   } )
 }
 
-export function getDetail( id : number ) : requestType {
+export function getDetail( id: number ): requestType {
   return http.request( {
     url : '/article/detail',
     method : 'get',
@@ -17,7 +17,7 @@ export function getDetail( id : number ) : requestType {
   } )
 }
 
-export function getPv( data?: object ) : requestType {
+export function getPv( data?: object ): requestType {
   return http.request( {
     url : '/article/pv',
     method : 'get',
@@ -25,7 +25,7 @@ export function getPv( data?: object ) : requestType {
   } )
 }
 
-export function createArticle( data?: object ) : requestType {
+export function createArticle( data?: object ): requestType {
   return http.request( {
     url : '/article/create',
     method : 'post',
@@ -33,7 +33,7 @@ export function createArticle( data?: object ) : requestType {
   } )
 }
 
-export function updateArticle( data?: object ) : requestType {
+export function updateArticle( data?: object ): requestType {
   return http.request( {
     url : '/article/update',
     method : 'post',

@@ -1,4 +1,3 @@
-
 import { defineStore } from 'pinia'
 import { AppRouteRecordRaw } from '/@/router/types'
 
@@ -12,11 +11,11 @@ const useTagsViewStore = defineStore( {
     }
   },
   actions : {
-    ADD_VIEW( view : AppRouteRecordRaw ) {
+    ADD_VIEW( view: AppRouteRecordRaw ) {
       this.ADD_VISITED_VIEW( view )
       this.ADD_CACHED_VIEW( view )
     },
-    DEL_VIEW( view : AppRouteRecordRaw ) {
+    DEL_VIEW( view: AppRouteRecordRaw ) {
       return new Promise( resolve => {
         this.DEL_VISITED_VIEW( view )
         this.DEL_CACHED_VIEW( view )
@@ -26,7 +25,7 @@ const useTagsViewStore = defineStore( {
         } )
       } )
     },
-    DEL_OTHERS_VIEWS( view : AppRouteRecordRaw ) {
+    DEL_OTHERS_VIEWS( view: AppRouteRecordRaw ) {
       return new Promise( resolve => {
         this.DEL_OTHERS_VISITED_VIEWS( view )
         this.DEL_OTHERS_CACHED_VIEWS( view )
@@ -44,22 +43,22 @@ const useTagsViewStore = defineStore( {
       } )
     },
 
-    ADD_VISITED_VIEW( view : AppRouteRecordRaw ) {
-      if ( this.visitedViews.some( ( v : AppRouteRecordRaw ) => v.path === view.path ) ) return
+    ADD_VISITED_VIEW( view: AppRouteRecordRaw ) {
+      if ( this.visitedViews.some( ( v: AppRouteRecordRaw ) => v.path === view.path ) ) return
       this.visitedViews.push(
         Object.assign( {}, view, {
           title : view.meta?.title || 'no-name'
         } )
       )
     },
-    ADD_CACHED_VIEW( view : AppRouteRecordRaw ) {
+    ADD_CACHED_VIEW( view: AppRouteRecordRaw ) {
       if ( view.name && this.cachedViews.includes( view.name ) ) return
       if ( !view.meta?.noCache && view.name ) {
         this.cachedViews.push( view.name )
       }
     },
 
-    DEL_VISITED_VIEW( view : AppRouteRecordRaw ) {
+    DEL_VISITED_VIEW( view: AppRouteRecordRaw ) {
       for ( const [i, v] of this.visitedViews.entries() ) {
         if ( v.path === view.path ) {
           this.visitedViews.splice( i, 1 )
@@ -67,17 +66,17 @@ const useTagsViewStore = defineStore( {
         }
       }
     },
-    DEL_CACHED_VIEW( view : AppRouteRecordRaw ) {
+    DEL_CACHED_VIEW( view: AppRouteRecordRaw ) {
       const index = view.name ? this.cachedViews.indexOf( view.name ) : -1
       index > -1 && this.cachedViews.splice( index, 1 )
     },
 
-    DEL_OTHERS_VISITED_VIEWS( view : AppRouteRecordRaw ) {
+    DEL_OTHERS_VISITED_VIEWS( view: AppRouteRecordRaw ) {
       this.visitedViews = this.visitedViews.filter( v => {
         return v.meta?.affix || v.path === view.path
       } )
     },
-    DEL_OTHERS_CACHED_VIEWS( view : AppRouteRecordRaw ) {
+    DEL_OTHERS_CACHED_VIEWS( view: AppRouteRecordRaw ) {
       const index = view.name ? this.cachedViews.indexOf( view.name ) : -1
       if ( index > -1 ) {
         this.cachedViews = this.cachedViews.slice( index, index + 1 )
@@ -94,7 +93,7 @@ const useTagsViewStore = defineStore( {
       this.cachedViews = []
     },
 
-    UPDATE_VISITED_VIEW( view : AppRouteRecordRaw ) {
+    UPDATE_VISITED_VIEW( view: AppRouteRecordRaw ) {
       for ( let v of this.visitedViews ) {
         if ( v.path === view.path ) {
           v = Object.assign( v, view )
@@ -102,7 +101,7 @@ const useTagsViewStore = defineStore( {
         }
       }
     },
-    CURRENT_CLOSE( name? : string ) {
+    CURRENT_CLOSE( name?: string ) {
       this.currentClose = name || ''
     }
   }

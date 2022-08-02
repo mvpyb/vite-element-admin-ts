@@ -1,11 +1,10 @@
-
 interface deviceInter {
-  match: Fn;
+  match: Fn
 }
 
 // 检测设备类型(手机返回true,反之)
-export const isMobile = () : boolean => {
-  const sUserAgent : deviceInter = navigator.userAgent.toLowerCase()
+export const isMobile = (): boolean => {
+  const sUserAgent: deviceInter = navigator.userAgent.toLowerCase()
   // const bIsIpad = sUserAgent.match( /ipad/i ) == 'ipad'
   const bIsIphoneOs = sUserAgent.match( /iphone os/i ) == 'iphone os'
   const bIsMidp = sUserAgent.match( /midp/i ) == 'midp'

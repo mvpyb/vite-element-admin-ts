@@ -2,13 +2,13 @@ import './waves.css'
 
 import { Directive, DirectiveBinding } from 'vue'
 interface ElType extends HTMLElement {
-  '@@wavesContext'?: any;
+  '@@wavesContext'?: any
 }
 
 const context = '@@wavesContext'
 
-function handleClick( el : ElType, binding : DirectiveBinding ) {
-  function handle( e : MouseEvent ) {
+function handleClick( el: ElType, binding: DirectiveBinding ) {
+  function handle( e: MouseEvent ) {
     const customOpts = Object.assign( {}, binding.value )
     const opts = Object.assign(
       {
@@ -62,15 +62,15 @@ function handleClick( el : ElType, binding : DirectiveBinding ) {
   return handle
 }
 
-const wave : Directive = {
-  beforeMount( el : ElType, binding : DirectiveBinding ) {
+const wave: Directive = {
+  beforeMount( el: ElType, binding: DirectiveBinding ) {
     el.addEventListener( 'click', handleClick( el, binding ), false )
   },
-  beforeUpdate( el : ElType, binding : DirectiveBinding ) {
+  beforeUpdate( el: ElType, binding: DirectiveBinding ) {
     el.removeEventListener( 'click', el[context].removeHandle, false )
     el.addEventListener( 'click', handleClick( el, binding ), false )
   },
-  unmounted( el : ElType ) {
+  unmounted( el: ElType ) {
     el.removeEventListener( 'click', el[context].removeHandle, false )
     el[context] = null
     delete el[context]

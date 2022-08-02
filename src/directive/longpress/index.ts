@@ -1,20 +1,19 @@
-
 import { Directive, DirectiveBinding } from 'vue'
 interface ElType extends HTMLElement {
-  start?: Function | null;
-  handler?: Function | null;
-  _v_clipboard?: any;
+  start?: Function | null
+  handler?: Function | null
+  _v_clipboard?: any
 }
 
-const longpress : Directive = {
-  beforeMount : function( el : ElType, binding : DirectiveBinding ) {
+const longpress: Directive = {
+  beforeMount : function( el: ElType, binding: DirectiveBinding ) {
     if ( typeof binding.value !== 'function' ) {
       throw 'callback must be a function'
     }
     // eslint-disable-next-line no-undef
     let pressTimer: NodeJS.Timeout | null = null
     // 创建计时器（ 2秒后执行函数 ）
-    const start = ( e : any ) => {
+    const start = ( e: any ) => {
       if ( e.type === 'click' && e.button !== 0 ) {
         return
       }
@@ -30,7 +29,7 @@ const longpress : Directive = {
         pressTimer = null
       }
     }
-    const handler = ( e : MouseEvent | TouchEvent ) => {
+    const handler = ( e: MouseEvent | TouchEvent ) => {
       binding.value( e )
     }
     el.addEventListener( 'mousedown', start )

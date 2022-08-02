@@ -1,6 +1,5 @@
-
 // base ==> blob
-export const base64ToBlob = ( base64 : string ) : Blob => {
+export const base64ToBlob = ( base64: string ): Blob => {
   const arr = base64.split( ',' )
   const typeItem = arr[0]
   const mime = typeItem.match( /:(.*?);/ )![1]
@@ -47,7 +46,7 @@ export async function blobToFile( Blobs = [], fileName = 'test.zip', fileType = 
 }
 
 // base64 转 file
-export function base64ToFile( url : string, fileName : string ) {
+export function base64ToFile( url: string, fileName: string ) {
   const arr = url.split( ',' )
   const mime = arr[0].match( /:(.*?);/ )![1]
   const bstr = atob( arr[1] )
@@ -82,7 +81,7 @@ export function downloadByData( data: BlobPart, filename: string, mime?: string,
 
 // URL 下载
 export function downloadByOnlineUrl( url: string, filename: string, mime?: string, bom?: BlobPart ) {
-  urlToBase64( url ).then( ( base64 ) => {
+  urlToBase64( url ).then( base64 => {
     downloadByBase64( base64, filename, mime, bom )
   } )
 }

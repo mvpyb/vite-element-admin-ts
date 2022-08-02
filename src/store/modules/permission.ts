@@ -1,4 +1,3 @@
-
 import { defineStore } from 'pinia'
 import { asyncRoutes, constantRoutes } from '/@/router'
 import type { AppRouteRecordRaw } from '/@/router/types'
@@ -8,7 +7,7 @@ import type { AppRouteRecordRaw } from '/@/router/types'
  * @param roles
  * @param route const hasPermission = (roles: string[], route: RouteConfig) => {
  */
-function hasPermission( roles : string[], route : AppRouteRecordRaw ) : boolean {
+function hasPermission( roles: string[], route: AppRouteRecordRaw ): boolean {
   if ( route.meta && route.meta.roles ) {
     return roles.some( role => route.meta?.roles?.includes( role ) )
   } else {
@@ -21,10 +20,10 @@ function hasPermission( roles : string[], route : AppRouteRecordRaw ) : boolean 
  * @param routes asyncRoutes
  * @param roles
  */
-export function filterAsyncRoutes( routes : AppRouteRecordRaw[], roles : string[] ) : AppRouteRecordRaw[] {
-  const res : AppRouteRecordRaw[] = []
+export function filterAsyncRoutes( routes: AppRouteRecordRaw[], roles: string[] ): AppRouteRecordRaw[] {
+  const res: AppRouteRecordRaw[] = []
 
-  routes.forEach( ( route : AppRouteRecordRaw ) => {
+  routes.forEach( ( route: AppRouteRecordRaw ) => {
     const tmp = { ...route }
     if ( hasPermission( roles, tmp ) ) {
       if ( tmp.children ) {
@@ -47,9 +46,9 @@ const usePermissionStore = defineStore( {
     }
   },
   actions : {
-    SET_ROUTES( roles : string[] ) : Promise<AppRouteRecordRaw[]> {
+    SET_ROUTES( roles: string[] ): Promise<AppRouteRecordRaw[]> {
       return new Promise( resolve => {
-        let accessedRoutes : Array<AppRouteRecordRaw>
+        let accessedRoutes: Array<AppRouteRecordRaw>
         if ( roles.includes( 'admin' ) ) {
           accessedRoutes = asyncRoutes || []
         } else {
@@ -61,7 +60,7 @@ const usePermissionStore = defineStore( {
         resolve( accessedRoutes )
       } )
     },
-    SET_DIRECTIVE_ROLE( roles : string[] ) {
+    SET_DIRECTIVE_ROLE( roles: string[] ) {
       this.directivePermission = roles
     }
   }

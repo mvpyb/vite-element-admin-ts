@@ -18,9 +18,9 @@ import { TOKEN, WHITE_CODE_LIST, LOGIN_ERROR_CODE, GLOBAL_DATA } from '/@/config
 import qs from 'qs'
 
 type optionsType = {
-  url : string,
-  method : string,
-  data? : any
+  url: string
+  method: string
+  data?: any
 }
 
 class HttpRequest {
@@ -35,7 +35,7 @@ class HttpRequest {
     this.timeout = 60 * 60 * 24 * 1000
   }
 
-  getBaseUrl() : string {
+  getBaseUrl(): string {
     const { envStr } = getEnvs()
     const baseUrlStr = envStr === 'dev' ? import.meta.env.VITE_PROXY_DOMAIN : GLOBAL_DATA[envStr].baseUrl
     return baseUrlStr
@@ -53,7 +53,7 @@ class HttpRequest {
     return config
   }
 
-  getParams( payload : any ) {
+  getParams( payload: any ) {
     const { method, data } = payload
     if ( ['post', 'put', 'patch', 'delete'].indexOf( method ) >= 0 ) {
       payload.data = data
@@ -64,7 +64,7 @@ class HttpRequest {
     return payload
   }
 
-  checkStatus( status : number ) {
+  checkStatus( status: number ) {
     let errMessage = ''
     switch ( status ) {
       case 400:
@@ -110,10 +110,10 @@ class HttpRequest {
   }
 
   // 拦截处理
-  setInterceptors( instance : AxiosInstance ) {
+  setInterceptors( instance: AxiosInstance ) {
     // 请求拦截
     instance.interceptors.request.use(
-      ( config : AxiosRequestConfig ) => {
+      ( config: AxiosRequestConfig ) => {
         if ( !navigator.onLine ) {
           ElMessage( {
             message : '请检查您的网络是否正常',
@@ -137,7 +137,7 @@ class HttpRequest {
 
     // 响应拦截
     instance.interceptors.response.use(
-      ( res : AxiosResponse ) => {
+      ( res: AxiosResponse ) => {
         const result = res.data
         const type = Object.prototype.toString.call( result )
         // 如果是文件流 直接返回
@@ -182,7 +182,7 @@ class HttpRequest {
     )
   }
 
-  request( options : optionsType ) {
+  request( options: optionsType ) {
     const instance = axios.create()
     const baseOpt = this.getConfig()
     const params = Object.assign( {}, baseOpt, this.getParams( options ) )

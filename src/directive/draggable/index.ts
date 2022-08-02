@@ -1,10 +1,9 @@
-
 import { Directive } from 'vue'
 
-const draggable : Directive = {
-  created : function( el : HTMLElement ) {
+const draggable: Directive = {
+  created : function( el: HTMLElement ) {
     el.style.cursor = 'move'
-    el.onmousedown = function( e : MouseEvent ) {
+    el.onmousedown = function( e: MouseEvent ) {
       const disx = e.pageX - el.offsetLeft
       const disy = e.pageY - el.offsetTop
       document.onmousemove = function( e ) {

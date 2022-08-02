@@ -1,4 +1,3 @@
-
 import { head, toArray } from 'lodash-unified'
 import mitt from 'mitt'
 import type { App } from 'vue'
@@ -6,11 +5,11 @@ import type { App } from 'vue'
 export const emitter = mitt()
 
 export default {
-  install( Vue : App ) {
+  install( Vue: App ) {
     const _emitter = mitt()
 
     // 全局发布
-    Vue.config.globalProperties.$pub = ( ...args : any[] ) => {
+    Vue.config.globalProperties.$pub = ( ...args: any[] ) => {
       _emitter.emit( head( args ), args.slice( 1 ) )
     }
 

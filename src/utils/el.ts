@@ -1,4 +1,3 @@
-
 export const hasClass = ( el: RefType<any>, cls: string ): any => {
   return !!el.className.match( new RegExp( '(\\s|^)' + cls + '(\\s|$)' ) )
 }
