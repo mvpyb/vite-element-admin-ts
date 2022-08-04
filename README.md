@@ -12,7 +12,7 @@ Vite Element Admin TS 是一个免费开源的中后台模版(Ts 版本)。使�
 
 ## 预览
 
-- [在线预览 - 码云](https://simmon_page.gitee.io/vite-element-admi-ts/dist/)
+- [在线预览 - 码云](https://simmon_page.gitee.io/vite-element-admin-ts/dist/)
 - [在线预览 - GitHub](https://mvpyb.github.io/vite-element-admin-ts/dist/)
 
 ---
