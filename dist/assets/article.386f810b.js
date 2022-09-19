@@ -1,1 +1,0 @@
-import{dW as e}from"./index.a821c646.js";function u(t){return e.request({method:"get",url:"/article/list",data:t})}function a(t){return e.request({url:"/article/pv",method:"get",data:t})}function c(t){return e.request({url:"/article/create",method:"post",data:t})}function i(t){return e.request({url:"/article/update",method:"post",data:t})}export{a,c,u as g,i as u};
