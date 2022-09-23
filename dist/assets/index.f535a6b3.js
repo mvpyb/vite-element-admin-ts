@@ -1,1 +1,0 @@
-import{_ as r,o as e,c as l,f as t,w as o,i as n,m as _,U as i}from"./index.d27a4e9e.js";const d={},m={style:{padding:"30px"}};function f(p,u){const a=n("el-alert"),c=n("router-view");return e(),l("div",m,[t(c,null,{default:o(({Component:s})=>[t(a,{closable:!1,title:"menu 1"},{default:o(()=>[(e(),_(i(s)))]),_:2},1024)]),_:1})])}const v=r(d,[["render",f]]);export{v as default};
