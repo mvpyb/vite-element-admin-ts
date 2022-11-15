@@ -276,6 +276,7 @@ export const asyncRoutes: AppRouteRecordRaw[] = [
     path : '/animate',
     name : 'Animate',
     component : Layout,
+    redirect : '/animate/index',
     meta : {
       title : '动画'
     },

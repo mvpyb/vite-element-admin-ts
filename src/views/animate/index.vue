@@ -13,22 +13,31 @@
     <div id="js-pink-bg" class="background pink-background">
       <div id="js-logo" class="pink-background__logo" />
     </div>
+
+    <el-divider content-position="left"> lottie </el-divider>
+    <span>
+      see More : https://github.com/airbnb/lottie-web?utm_source=cdnjs&utm_medium=cdnjs_link&utm_campaign=cdnjs_library
+    </span>
+    <Vue3Lottie
+        :animationData="lottieOptions.animationData"
+        :height="lottieOptions.height"
+        :width="lottieOptions.width"
+    />
+
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import MoJs from '@mojs/core'
+import DogJSON from './lottie/dogJson.json'
 
 defineOptions( {
   name : 'Animate'
 } )
-
 const heart = ref( null )
 const logo = ref( null )
-
-let burst
-
+let burst: any
 onMounted( () => {
   burst = new MoJs.Burst( {
     // 爆炸范围
@@ -69,10 +78,17 @@ onMounted( () => {
     count : 10
   } )
 } )
-
 const startMo = () => {
   new MoJs.Timeline().add( burst ).play()
 }
+
+const lottieOptions = {
+  animationData : DogJSON,
+  height : 200,
+  width : 200,
+  loop : true
+}
+
 </script>
 
 <style lang="scss" scoped>
