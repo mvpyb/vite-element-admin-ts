@@ -19,11 +19,10 @@
       see More : https://github.com/airbnb/lottie-web?utm_source=cdnjs&utm_medium=cdnjs_link&utm_campaign=cdnjs_library
     </span>
     <Vue3Lottie
-        :animationData="lottieOptions.animationData"
-        :height="lottieOptions.height"
-        :width="lottieOptions.width"
+      :animationData="lottieOptions.animationData"
+      :height="lottieOptions.height"
+      :width="lottieOptions.width"
     />
-
   </div>
 </template>
 
@@ -88,7 +87,6 @@ const lottieOptions = {
   width : 200,
   loop : true
 }
-
 </script>
 
 <style lang="scss" scoped>

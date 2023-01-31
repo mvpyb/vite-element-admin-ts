@@ -1,0 +1,1 @@
+import{_ as t,d as o,o as s,c,v as e,e as n}from"./index.8f125f05.js";const l=o({name:"Menu1-1"}),a=n("br",null,null,-1),r=n("br",null,null,-1),_=n("br",null,null,-1);function d(u,i,p,m,f,x){return s(),c("div",null,[e(" nested "),a,e(" menu1 "),r,e(" menu1-1 "),_])}const $=t(l,[["render",d]]);export{$ as default};
