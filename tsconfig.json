@@ -27,7 +27,12 @@
     "strictFunctionTypes": false,
     "suppressImplicitAnyIndexErrors": true,
     "target": "esnext",
-    "types": ["node", "vite/client", "element-plus/global", "unplugin-vue-define-options"],
+    "types": [
+      "node",
+      "vite/client",
+      "element-plus/global",
+      "unplugin-vue-define-options/macros-global"
+    ],
     "typeRoots": ["./node_modules/@types/", "./types"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue",  "mock/*.ts",  "vite.config.ts",  "types/*.d.ts"],
