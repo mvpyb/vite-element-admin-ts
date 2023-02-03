@@ -1,0 +1,1 @@
+import{_ as t,d as o,o as s,c as a,v as e,P as c,e as n}from"./index.c50863c5.js";const l=o({name:"Menu1-3"}),r=n("br",null,null,-1),_=n("br",null,null,-1),u=n("br",null,null,-1);function d(i,m,p,f,x,h){return s(),a(c,null,[e(" nested "),r,e(" menu1 "),_,e(" menu1-3 "),u],64)}const b=t(l,[["render",d]]);export{b as default};
