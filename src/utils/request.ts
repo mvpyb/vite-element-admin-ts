@@ -15,7 +15,6 @@ import router from '/@/router'
 import { useUserStore } from '/@/store'
 
 import { TOKEN, WHITE_CODE_LIST, LOGIN_ERROR_CODE, GLOBAL_DATA } from '/@/config/constant'
-import qs from 'qs'
 
 type optionsType = {
   url: string
@@ -126,7 +125,6 @@ class HttpRequest {
         if ( token ) {
           config.headers!.Authorization = token
         }
-        config.data = qs.stringify( config.data )
 
         return config
       },
