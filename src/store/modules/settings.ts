@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
-// import variables from '/@/styles/element-variables.scss'
-import { localStorageHandle } from '/@/utils/storage'
-import defaultSettings from '/@/settings'
+// import variables from '@/styles/element-variables.scss'
+import { localStorageHandle } from '@/utils/storage'
+import defaultSettings from '@/settings'
 import { setType } from '../types'
 
 const { showSettings, tagsView, fixedHeader, sidebarLogo } = defaultSettings

@@ -1,4 +1,4 @@
-import { usePermissionStore } from '/@/store'
+import { usePermissionStore } from '@/store'
 import { Directive, DirectiveBinding } from 'vue'
 
 const permission: Directive = {

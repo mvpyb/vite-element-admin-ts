@@ -20,7 +20,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import AMapLoader from '@amap/amap-jsapi-loader'
-import YuLayout from '/@/components/YuLayout'
+import YuLayout from '@/components/YuLayout'
 
 const container = ref<HTMLElement | null>()
 const ak = '5dc1bd09758a3d8eaafa4a8e5800e29c'

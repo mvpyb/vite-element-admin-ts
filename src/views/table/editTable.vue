@@ -143,9 +143,9 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
-import { parseTime } from '/@/utils'
-import { getArticle } from '/@/api/article'
-import YuLayout from '/@/components/YuLayout'
+import { parseTime } from '@/utils'
+import { getArticle } from '@/api/article'
+import YuLayout from '@/components/YuLayout'
 import { ElMessage } from 'element-plus'
 
 const list = ref<Object[]>( [] )

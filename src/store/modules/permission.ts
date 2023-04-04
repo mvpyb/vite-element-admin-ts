@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
-import { asyncRoutes, constantRoutes } from '/@/router'
-import type { AppRouteRecordRaw } from '/@/router/types'
+import { asyncRoutes, constantRoutes } from '@/router'
+import type { AppRouteRecordRaw } from '@/router/types'
 
 /**
  * 使用meta.role来确定当前用户是否有权限

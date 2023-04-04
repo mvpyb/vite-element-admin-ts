@@ -1,6 +1,6 @@
 import { App } from 'vue'
 import 'xe-utils'
-// import { i18n } from '/@/local'
+// import { i18n } from '@/local'
 import {
   // 全局对象
   VXETable,

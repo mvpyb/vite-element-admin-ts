@@ -20,10 +20,10 @@
 
 <script setup lang="ts">
 import { ref, onBeforeMount, onMounted, onUnmounted } from 'vue'
-import { isMobile } from '/@/utils/device'
+import { isMobile } from '@/utils/device'
 import { debounce } from 'lodash-unified'
 
-import YuCopyright from '/@/components/YuCopyright'
+import YuCopyright from '@/components/YuCopyright'
 import Logo from './components/logo.vue'
 import WeChatLogin from './components/weChatLogin.vue'
 import LoginPwd from './loginPwd.vue'

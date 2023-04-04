@@ -26,7 +26,7 @@
 
 <script setup lang="tsx">
 import { ref } from 'vue'
-import { loginHistory } from '/@/api/user'
+import { loginHistory } from '@/api/user'
 import LoginHistory from './components/infoLayout'
 import type { Column } from 'element-plus'
 

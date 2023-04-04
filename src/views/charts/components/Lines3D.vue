@@ -6,7 +6,7 @@
 import * as echarts from 'echarts'
 import 'echarts-gl'
 import { onMounted, onBeforeUnmount, shallowRef, ShallowRef } from 'vue'
-import npmdep from '/@/assets/charts/npmdep.json'
+import npmdep from '@/assets/charts/npmdep.json'
 
 type ECharts = echarts.ECharts
 type EChartsOption = echarts.EChartsOption

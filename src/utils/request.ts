@@ -10,11 +10,11 @@
 import axios, { AxiosRequestConfig, AxiosInstance, AxiosResponse } from 'axios'
 import { ElMessage } from 'element-plus'
 import { getEnvs } from './envs'
-import cookies from '/@/utils/cookies'
-import router from '/@/router'
-import { useUserStore } from '/@/store'
+import cookies from '@/utils/cookies'
+import router from '@/router'
+import { useUserStore } from '@/store'
 
-import { TOKEN, WHITE_CODE_LIST, LOGIN_ERROR_CODE, GLOBAL_DATA } from '/@/config/constant'
+import { TOKEN, WHITE_CODE_LIST, LOGIN_ERROR_CODE, GLOBAL_DATA } from '@/config/constant'
 
 type optionsType = {
   url: string

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { AppRouteRecordRaw } from '/@/router/types'
+import { AppRouteRecordRaw } from '@/router/types'
 
 const useTagsViewStore = defineStore( {
   id : 'tagsView',

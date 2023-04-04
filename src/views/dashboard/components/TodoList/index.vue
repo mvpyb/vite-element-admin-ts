@@ -40,7 +40,7 @@
 <script lang="ts">
 import { ref, reactive, computed, toRefs, Ref } from 'vue'
 import Todo from './Todo.vue'
-import { localStorageHandle } from '/@/utils/storage'
+import { localStorageHandle } from '@/utils/storage'
 import { todoType, setType, filtersType } from './type'
 
 const TODO_LIST_KEY = 'todos'

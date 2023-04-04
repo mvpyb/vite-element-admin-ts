@@ -53,7 +53,7 @@
 
 <script setup lang="ts">
 import { ref, reactive, computed } from 'vue'
-import { validID } from '/@/utils/validate'
+import { validID } from '@/utils/validate'
 import { ElMessage } from 'element-plus'
 import LoginHistory from './components/infoLayout.vue'
 import type { FormInstance, FormRules } from 'element-plus'

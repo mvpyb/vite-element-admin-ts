@@ -4,8 +4,8 @@
 
 <script lang="ts">
 import { reactive, computed, watch, onMounted, unref, toRefs, ref, defineComponent, PropType } from 'vue'
-import { propTypes } from '/@/utils/propTypes'
-import { isNumber } from '/@/utils/validate'
+import { propTypes } from '@/utils/propTypes'
+import { isNumber } from '@/utils/validate'
 
 export default defineComponent( {
   name : 'YuCountTo',

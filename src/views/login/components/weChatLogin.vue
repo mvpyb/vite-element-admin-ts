@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { WX_APPID } from '/@/config/constant'
+import { WX_APPID } from '@/config/constant'
 import { useRoute } from 'vue-router'
 const route = useRoute()
 

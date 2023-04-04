@@ -111,13 +111,13 @@
 
 <script setup lang="ts">
 import { ref, reactive, nextTick } from 'vue'
-import { parseTime } from '/@/utils'
-import { getArticle } from '/@/api/article'
+import { parseTime } from '@/utils'
+import { getArticle } from '@/api/article'
 import Sortable, { Options } from 'sortablejs'
-import YuLayout from '/@/components/YuLayout'
+import YuLayout from '@/components/YuLayout'
 import { ElTable } from 'element-plus'
 import { VxeTableInstance } from 'vxe-table'
-import { isNullAndUnDef } from '/@/utils/validate'
+import { isNullAndUnDef } from '@/utils/validate'
 
 const dragTable = ref<InstanceType<typeof ElTable> | null>()
 const dragVxeTable = ref<VxeTableInstance | null>()

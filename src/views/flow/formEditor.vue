@@ -35,8 +35,8 @@
 
 <script setup lang="ts">
 import { ref, onBeforeMount } from 'vue'
-import YuLayout from '/@/components/YuLayout'
-import { loader } from '/@/utils/loader'
+import YuLayout from '@/components/YuLayout'
+import { loader } from '@/utils/loader'
 import generateJson from './components/generateJson.json'
 import { ElDesignForm, ElGenerateForm } from 'vue-form-create2'
 

@@ -39,7 +39,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, shallowRef, onBeforeUnmount } from 'vue'
-import YuLayout from '/@/components/YuLayout'
+import YuLayout from '@/components/YuLayout'
 import '@wangeditor/editor/dist/css/style.css'
 import { Editor, Toolbar } from '@wangeditor/editor-for-vue'
 import { IDomEditor } from '@wangeditor/editor'

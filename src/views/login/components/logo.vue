@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import logo from '/@/assets/imgs/logo.png'
+import logo from '@/assets/imgs/logo.png'
 defineOptions( {
   name : 'Logo'
 } )

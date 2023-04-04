@@ -1,11 +1,11 @@
 import router from './router'
-import cookies from '/@/utils/cookies'
-import NProgress from '/@/utils/progress'
-import getPageTitle from '/@/utils/getPageTitle'
-import { TOKEN } from '/@/config/constant'
-import { useUserStore, usePermissionStore } from '/@/store'
+import cookies from '@/utils/cookies'
+import NProgress from '@/utils/progress'
+import getPageTitle from '@/utils/getPageTitle'
+import { TOKEN } from '@/config/constant'
+import { useUserStore, usePermissionStore } from '@/store'
 import { RouteRecordRaw } from 'vue-router'
-import { toRouteType } from '/@/router/types'
+import { toRouteType } from '@/router/types'
 
 const whiteList = ['/login']
 router.beforeEach( async( to: toRouteType, from, next ): Promise<void> => {
